@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build: ./containers/nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+  app:
+    build:
+      context: .
+    volumes:
+      - ".:/app"
+    environment:
+      - "RACK_ENV=development"
+    depends_on: 
+      - db
+      - kvs
+  db:
+    build: ./containers/mysql
+    volumes:
+      - "project_volume:/var/lib/mysql"
+  kvs:
+    build: ./containers/redis
+
+volumes:
+  project_volume:
