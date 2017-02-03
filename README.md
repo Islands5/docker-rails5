@@ -9,7 +9,10 @@ Dockerをインストールします。
 
 ```
 $ git clone https://github.com/Islands5/docker-rails5
-$ cd docker-rails5
+$ mv docker-rails5 your_project_name
+$ cd your_project_name
+$ grep -r project .
+プロジェクト名に依存するファイルが出てくるので置換処理(ここのうまいワンライナーが見つからない。。。)
 
 $ ruby -e "require 'securerandom'; puts SecureRandom.hex(64)"
 #=> 長い文字列
