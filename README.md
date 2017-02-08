@@ -78,6 +78,26 @@ mysql -u root -p password
 
 工事中!
 
+### DockerSyncをつかった同期設定(Docker for Macのみ)
+
+必要なツールを入れて
+```
+gem install docker-sync
+brew install fswatch
+brew install unison
+```
+
+起動
+```
+$ docker-sync-stack start
+```
+
+上記のコマンドは以下の2つと同じ意味です
+```
+$ docker-sync start
+$ docker-compose up
+```
+
 ## 参考
 Dockerで作る最強のWeb開発環境2017
 http://qiita.com/osyoyu/items/a039b7e05abc6e97fb25
@@ -90,3 +110,6 @@ http://qiita.com/voluntas/items/68c1fd04dd3d507d4083
 
 docker execとdocker attachの違い
 http://qiita.com/RyoMa_0923/items/9b5d2c4a97205692a560
+
+docker-syncでコンテナホスト間を爆速で同期
+http://qiita.com/pocari/items/0340049742927f3a94b7

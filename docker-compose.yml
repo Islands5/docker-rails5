@@ -10,7 +10,7 @@ services:
     build:
       context: .
     volumes:
-      - ".:/app"
+      - "sync-volume:/app"
     environment:
       - "RACK_ENV=development"
     depends_on: 
@@ -25,3 +25,5 @@ services:
 
 volumes:
   project_volume:
+  sync-volume:
+    external: true

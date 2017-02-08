@@ -1,0 +1,5 @@
+syncs:
+  sync-volume:
+    src: '.'
+    dest: '/app'
+    sync_strategy: 'unison'
